@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="DataTables/datatables.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script> 
+    <script src="js/utils.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5><a href="./index.html">Registro de Facturas</a></h5>
+                    <h5><a href="./cambiarDomicilio.html">Cambiar de Domicilio</a></h5>
+                    <h5><a href="./domiciliacion.html">Domiciliaci&oacute;n</a></h5>
+                    <h5><a href="./expedientes.html">Expedientes y Valores</a></h5>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <div class="container">
+        <h5 class="titulo">Domiciliaci&oacute;n Bancaria</h5>
+        <form id="person-form">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="selectPersona">Persona:</label>
+                </div>
+            </div>
+            <form>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <select id="selectPersona" name="selectPersona" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="sara">Sara</option>
+                        <option value="pepe">Pepe</option>
+                        <option value="...">...</option>
+                    </select>  
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>
+            </div>
+            </form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <p class="negrita">Documento: ...</p>
+                    <p class="negrita">Nombre / Raz&oacute;n Social: ...</p>
+                    <p class="negrita">Direcci&oacute;n: ...</p>
+                </div>
+            </div>
+        </form>
+        <h5 class="titulo">Expedientes y valores seleccionados</h5>
+        <br/>
+        <div class="row">
+            <div class="col-md-1 borde">
+                <input type="checkbox">
+            </div>
+            <div class="col-md-11 borde">
+                <label>VEH-638021 - VEHICULOS DE TRACCI&Oacute;N MECANICA - A.MATRICULA: -1156-FPB--CCC/SEPA:</label>
+            </div>
+        </div>
+        <p>Esta opci&oacute;n est&aacute; activa cuando todos los expedientes y valores seleccionados est&aacute;n domiciliados</p>
+        <h5 class="titulo">Nueva Domiciliaci&oacute;n</h5>
+        <form id="domiciliacion-form">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="cBancaria">Cuenta Bancaria</label>
+                    <select class="form-control" id="cBancaria" name="cBancaria">
+                        <option value="" selected>Seleccione</option>
+                        <option value="...">...</option>
+                    </select>
+                </div>
+            </div>
+            <p class="negrita">Titular</p>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="documento">Documento</label>
+                    <input type="text" class="form-control" id="documento" name="documento" disabled>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" disabled>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="banco">Banco</label>
+                    <input type="text" class="form-control" id="banco" name="banco" disabled>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="sucursal">Sucursal</label>
+                    <input type="text" class="form-control" id="sucursal" name="sucursal" disabled>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="dc">DC</label>
+                    <input type="text" class="form-control" id="dc" name="dc" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="cuenta">Cuenta</label>
+                    <input type="text" class="form-control" id="cuenta" name="cuenta" disabled>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="bic">BIC</label>
+                    <select class="form-control" id="bic" name="bic">
+                        <option value="" selected>Seleccione</option>
+                        <option value="...">...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="iban">IBAN</label>
+                    <input type="text" class="form-control" id="iban" name="iban">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button class="btn btn-primary">Volver</button>
+                    <button type="submit" class="btn btn-primary">Continuar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    
+    $('#domiciliacion-form').validate({
+            rules:
+                {
+                    cBancaria: {
+                        required: true
+                    },
+                    bic: {
+                        required: true
+                    },
+                    iban: {
+                        required: true
+                    }
+                },
+                messages:
+                {
+                    cBancaria: {
+                        required: "Campo obligatorio"
+                    },
+                    bic: {
+                        required: "Campo obligatorio"
+                    },
+                    iban: {
+                        required: "Campo obligatorio"
+                    }
+                },
+                errotPlacement : function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight : function(element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    $(element).closest('.form-group').find('.help-block').html('');
+                },
+                submitHandler : function(form){
+                    form.submit();
+                    alert('ok');
+            }
+        });
+    </script>
+</body>
+</html>

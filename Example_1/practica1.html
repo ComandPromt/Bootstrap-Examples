@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .titulo{
+            text-align: center;
+            color:white;
+            padding-top:0; 
+            margin-top: 0rem;
+        }
+
+        .relleno{
+            background-color: rgb(39, 37, 37);
+            height: 2rem;
+        }
+
+        .negrita{
+            font-weight: bold;
+        }
+
+        .plus{
+            border: solid 1px;
+            border-collapse: collapse;
+            background-color: rgb(206, 204, 204);
+        }
+
+        .margen{
+            margin-left: 0;
+        }
+
+        .centro{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row relleno">
+            <div class="col-md-12">
+                <h3 class="titulo">Domicilio de Notificación</h3>
+            </div>
+        </div>
+        <form id="person-form">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="selectPersona">Persona:</label>
+                </div>
+            </div>
+            <form>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <select id="selectPersona" name="selectPersona" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="sara">Sara</option>
+                        <option value="pepe">Pepe</option>
+                        <option value="...">...</option>
+                    </select>  
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>
+            </div>
+            </form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <p class="negrita">Documento: ...</p>
+                    <p class="negrita">Nombre / Raz&oacute;n Social: ...</p>
+                    <p class="negrita">Direcci&oacute;n: ...</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-1 plus">
+                    <input class="form-check-input margen" type="checkbox" id="gridCheck">
+                </div>
+                <div class="col-md-11 plus">
+                    <label class="form-check-label" for="gridCheck">Plusvalia</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-1 plus">
+                    <input class="form-check-input margen" type="checkbox" id="gridCheck">
+                </div>
+                <div class="col-md-11 plus">
+                    <label class="form-check-label" for="gridCheck">Plusvalia</label>
+                </div>
+            </div>
+        </form>
+        <br/><br/>
+        <div class="row relleno">
+            <div class="col-md-12">
+                <h3 class="titulo">Nuevo Domicilio de Notificación</h3>
+            </div>
+        </div>
+        <br/>
+        <form id="new-form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="selectProvincia">Provincias:</label>
+                    <select id="selectProvincia" name="selectProvincia" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="alicante">Alicante</option>
+                        <option>...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selectMunicipio">Municipios:</label>
+                    <select id="selectMunicipio" name="selectMunicipio" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="1">...</option>
+                        <option value="2">...</option>
+                        <option value="3">...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="selectTipoVia">Tipos de Vias:</label>
+                    <select id="selectTipoVia" name="selectTipoVia" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="4">...</option>
+                        <option value="5">...</option>
+                        <option value="6">...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="desVia">Descripci&oacute;n V&iacute;a:</label>
+                    <input type="text" class="form-control" name="desVia" id="desVia">
+                </div>
+                <div class="form-group col-md-4">
+                    <button type="button" id="btnLimpiar" class="btn btn-primary">Limpiar V&iacute;a</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputState">Nº:</label>
+                    <input type="number" class="form-control" name="numero" id="numero">
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="inputState">Letra:</label>
+                    <input type="text" class="form-control" name="letra" id="letra">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Bloque:</label>
+                    <input type="text" class="form-control" name="bloque" id="bloque">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Portal:</label>
+                    <input type="text" class="form-control" name="portal" id="portal">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Escalera:</label>
+                    <input type="text" class="form-control" name="escalera" id="escalera">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Planta:</label>
+                    <input type="number" class="form-control" name="planta" id="planta">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Puerta:</label>
+                    <input type="text" class="form-control" name="puerta" id="puerta">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputState">Kil&oacute;metro:</label>
+                    <input type="number" class="form-control" name="kilometro" id="kilometro">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">Hect&oacute;metro:</label>
+                    <input type="number" class="form-control" name="hectometro" id="hectometro">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">C&oacute;digo Postal:</label>
+                    <input type="number" class="form-control" name="cPostal" id="cPostal">
+                </div>
+            </div>
+            <div class="form-row mx-auto">
+                <div class="form-group col-md-12 centro">
+                    <button type="submit" class="btn btn-primary">Continuar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $('#person-form').validate({
+            rules:
+                {
+                    selectPersona: {
+                        required: true
+                    },
+                },
+                messages:
+                {
+                    selectPersona: {
+                        required: "Por favor, seleccione una persona."
+                    }
+                },
+            errotPlacement : function(error, element) {
+                $(element).closest('.form-group').find('.help-block').html(error.html());
+            },
+            highlight : function(element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                $(element).closest('.form-group').find('.help-block').html('');
+            },
+            submitHandler : function(form){
+                form.submit();
+                alert('ok');
+            }
+        });
+
+        $('document').ready(function() {
+            $("#btnLimpiar").click(function(){
+                $("#desVia").val("");
+                $("#selectTipoVia").val("");
+            });
+        });
+
+        $('#new-form').validate({
+            rules:
+                {
+                    selectProvincia: {
+                        required: true
+                    },
+                    selectMunicipio: {
+                        required: true
+                    },
+                    selectTipoVia: {
+                        required: true
+                    },
+                    desVia: {
+                        required: true,
+                        maxlength: 30
+                    },
+                    numero: {
+                        required: true
+                    },
+                    letra: {
+                        required: true,
+                        maxlength: 1
+                    },
+                    bloque: {
+                        required: true
+                    },
+                    portal: {
+                        required: true
+                    },
+                    escalera: {
+                        required: true
+                    },
+                    planta: {
+                        required: true
+                    },
+                    puerta: {
+                        required: true
+                    },
+                    kilometro: {
+                        required: true
+                    },
+                    hectometro: {
+                        required: true
+                    },
+                    cPostal: {
+                        required: true,
+                        maxlength: 5
+                    },
+                },
+                messages:
+                {
+                    selectProvincia: {
+                        required: "Por favor, seleccione una provincia."
+                    },
+                    selectMunicipio: {
+                        required: "Por favor, selecciones un municipio."
+                    },
+                    selectTipoVia: {
+                        required: "Por favor seleccione un tipo de via."
+                    },
+                    desVia: {
+                        required: "Inserte una descripción.",
+                        maxlength: "Maximo 30 caracteres"
+                    },
+                    numero: {
+                        required: "Obligatorio."
+                    },
+                    letra: {
+                        required: "Obligatorio.",
+                        maxlength: "Solo una letra"
+                    },
+                    bloque: {
+                        required: "Obligatorio."
+                    },
+                    portal: {
+                        required: "Obligatorio."
+                    },
+                    escalera: {
+                        required: "Obligatorio."
+                    },
+                    planta: {
+                        required: "Obligatorio."
+                    },
+                    puerta: {
+                        required: "Obligatorio."
+                    },
+                    kilometro: {
+                        required: "Obligatorio."
+                    },
+                    hectometro: {
+                        required: "Obligatorio."
+                    },
+                    cPostal: {
+                        required: "Obligatorio.",
+                        maxlength: "Máximo 5 números"
+                    }
+
+                },
+                errotPlacement : function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight : function(element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    $(element).closest('.form-group').find('.help-block').html('');
+                },
+                submitHandler : function(form){
+                    form.submit();
+                    alert('ok');
+            }
+        });
+
+    </script>
+</body>
+</html>

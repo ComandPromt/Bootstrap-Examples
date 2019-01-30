@@ -1,0 +1,58 @@
+﻿{
+  "draw": 1,
+  "recordsTotal": 3,
+  "recordsFiltered": 3,
+  "data": [
+    {
+      "DT_RowId": "row_1",
+      "provincia": "Córdoba",
+      "municipio": "Palma del Río",
+      "tipoVia": "Avenida",
+      "desVia": "Goya",
+      "numero": "1",
+      "letra": "A",
+      "bloque": "3",
+      "portal": "2",
+      "escalera": "C",
+      "planta": "2",
+      "puerta": "D",
+      "kilometro": "20",
+      "hectometro": "200",
+      "cPostal": "12345"
+    },
+{
+      "DT_RowId": "row_1",
+      "provincia": "Sevilla",
+      "municipio": "Écija",
+      "tipoVia": "Avenida",
+      "desVia": "Goya",
+      "numero": "1",
+      "letra": "A",
+      "bloque": "3",
+      "portal": "2",
+      "escalera": "C",
+      "planta": "2",
+      "puerta": "D",
+      "kilometro": "20",
+      "hectometro": "200",
+      "cPostal": "12345"
+    },
+{
+      "DT_RowId": "row_1",
+      "provincia": "Jaén",
+      "municipio": "Úbeda",
+      "tipoVia": "Avenida",
+      "desVia": "Goya",
+      "numero": "1",
+      "letra": "A",
+      "bloque": "3",
+      "portal": "2",
+      "escalera": "C",
+      "planta": "2",
+      "puerta": "D",
+      "kilometro": "20",
+      "hectometro": "200",
+      "cPostal": "12345"
+    }
+  ]
+}

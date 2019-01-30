@@ -1,0 +1,68 @@
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.tabla{
+    color: blue;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.titulo{
+    color:white;
+    background-color: black;
+    text-align: center;
+}
+
+.fecha{
+    width: 20px;
+}
+
+.deta{
+    text-align: center;
+}
+
+thead{
+    background-color: black;
+}
+
+th{
+    color: white;
+}
+
+td{
+    border: solid 1px;
+}
+tfoot{
+    border: solid 1px;
+    background-color: rgb(211, 211, 211);
+}
+
+tbody{
+    border: solid 1px;
+    background-color: rgb(211, 211, 211);
+}   
+
+.total{
+    color: red;
+    font-weight: bold;
+}
+
+.centro{
+    text-align: center
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.borde{
+    border: solid 1px;
+    background-color: gray;
+}

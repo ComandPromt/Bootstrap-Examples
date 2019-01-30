@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="DataTables/datatables.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script> 
+    <script src="js/utils.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                   <h5><a href="./index.html">Registro de Facturas</a></h5>
+                   <h5><a href="./cambiarDomicilio.html">Cambiar de Domicilio</a></h5>
+                   <h5><a href="./domiciliacion.html">Domiciliaci&oacute;n</a></h5>
+                   <h5><a href="./expedientes.html">Expedientes y Valores</a></h5>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h5 class="titulo">Registro de Facturas</h5>
+        <br>
+        <h5 class="titulo">Aportar los datos de la factura</h5>
+        <form id="index-form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <h4>Texto Explicativo (M&aacute;ximo 120 caracteres)</h4>
+                    <label for="textoExplicativo">Texto Explicativo (M&aacute;ximo 120 caracteres)</label>
+                    <textarea id="textoExplicativo" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-7">
+                    <h4>Datos de la factura</h4>
+                    <p>La factura de imputar&aacute; al ejercicio contable indicado por la fecha de expedici&oacute;n</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2 fecha">
+                    <label for="expedicion">Expedici&oacute;n</label>
+                    <input type="date" class="form-control" name="expedicion" id="expedicion">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2 fecha"></div>
+                <div class="form-group col-md-4">
+                    <label for="serie">Serie</label>
+                    <input type="number" id="serie" name="serie" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numero">N&uacute;mero</label>
+                    <input type="number" id="numero" name="numero" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="tipoFactura">Tipo de factura</label>
+                    <select id="tipoFactura" name="tipoFactura" class="form-control">
+                        <option selected>Seleccionar</option>
+                        <option value="factura">Factura</option>
+                        <option value=".">...</option>
+                        <option value="..">...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <h4>Detalles de la factura</h4>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expediente">Expediente o referencia de contrataci&oacute;n</label>
+                    <input type="text" id="expediente" name="expediente" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" id="departamento" name="departamento" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="personaContacto">Persona de Contacto</label>
+                    <input type="text" id="personaContacto" name="personaContacto" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="operacionContable">Operaci&oacute;n Contable</label>
+                    <input type="text" id="operacionContable" name="operacionContable" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="oficinaContable">Oficina Contable</label>
+                    <select id="oficinaContable" name="oficinaContable" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="factura">Factura</option>
+                        <option value=".">...</option>
+                        <option value="..">...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="organoGestor">&Oacute;rgano Gestor</label>
+                    <select id="organoGestor" name="organoGestor" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="factura">Factura</option>
+                        <option value=".">...</option>
+                        <option value="..">...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="unidadTramitadora">Unidad Tramitadora</label>
+                    <select id="unidadTramitadora" name="unidadTramitadora" class="form-control">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="factura">Factura</option>
+                        <option value=".">...</option>
+                        <option value="..">...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="areaGestora">Area Gestora</label>
+                    <select id="areaGestora" name="areaGestora" class="form-control">
+                        <option selected>Seleccionar</option>
+                        <option value="factura">Factura</option>
+                        <option value=".">...</option>
+                        <option value="..">...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 fecha">
+                    <label for="fDesde">Facturaci&oacute;n desde</label>
+                    <input type="date" name="fDesde" id="fDesde" class="form-control">
+                </div>
+                <div class="form-group col-md-6 fecha">
+                    <label for="fHasta">Facturaci&oacute;n hasta</label>
+                    <input type="date" name="fHasta" id="fHasta" class="form-control">
+                </div>
+            </div>
+        
+            <br/>
+            <h5 class="deta">Detalle</h5>
+            <p>Es necesario indicar al menos una linea de detalle de la factura</p>
+            <div class="row">
+                <div class="col-md-10">
+                        <table id="tabla1" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Descripci&oacute;n del bien o servicio</th>
+                                    <th>Cantidad</th>
+                                    <th>Importe unitario</th>
+                                    <th>Total</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tBody">
+                                    
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><input type="text" class="form-control" id="campo1" name="campo1"></td>
+                                    <td><input type="text" class="form-control" id="campo2" name="campo2"></td>
+                                    <td><input type="text" class="form-control" id="campo3" name="campo3"></td>
+                                    <td></td>
+                                    <td><button id="añadir" name="añadir" class="btn btn-primary">Añadir</button></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <p class="total">Total 0,00</p>
+                </div>
+            </div>
+
+            <br/>
+            <h5 class="deta">I.V.A</h5>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <table id="tabla1" class="table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Base</th>
+                                <th>Cuota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                        
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <select id="areaGestora" name="areaGestora" class="form-control">
+                                        <option selected>Seleccionar</option>
+                                        <option value="factura">Factura</option>
+                                        <option value=".">...</option>
+                                        <option value="..">...</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="desBien" name="desBien"></td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="areaGestora" class="form-control" name="areaGestora" class="form-control">
+                                        <option selected>Seleccionar</option>
+                                        <option value="factura">Factura</option>
+                                        <option value=".">...</option>
+                                        <option value="..">...</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="desBien" name="desBien"></td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="areaGestora" class="form-control" name="areaGestora" class="form-control">
+                                        <option selected>Seleccionar</option>
+                                        <option value="factura">Factura</option>
+                                        <option value=".">...</option>
+                                        <option value="..">...</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="desBien" name="desBien"></td>
+                                <td>0,00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <p class="total">Total I.V.A 0,00</p>
+                </div>
+            </div>   
+            <br/>
+            <br/>
+            <h5 class="deta">Descuentos de la factura</h5>
+            <div class="row">
+                <div class="col-md-10">
+                    <table id="tabla1" class="table">
+                        <thead>
+                            <tr>
+                                <th>Tipo Descuento</th>
+                                <th>Tipo</th>
+                                <th>Base</th>
+                                <th>Cuota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                            
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    I.R.P.F
+                                </td>
+                                <td><input type="text" class="form-control" id="tipo2" name="tipo2"></td>
+                                <td><input type="text" class="form-control" id="base2" name="base2"></td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label for="otro">Otro</label>
+                                    <input type="text" id="otro" name="otro" class="form-control">
+                                </td>
+                                <td><br/><input type="number" value="0.00" class="form-control" id="desBien" name="desBien"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <p>El importe de "Otros descuentos" minorar&aacute; el importe de la factura. Si la factura lleva IVA el importe de &eacute;ste descuento no puede imputarse como base disponible de IVA</p>
+                    <p class="total">Total Descuentos 0,00</p>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <h4>Pago</h4>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="transBancaria" name="transBancaria">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label" for="transBancaria">Transferencia bancaria:</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-5">
+                        <div class="form-check">
+                            <select id="areaGestora" class="form-control" name="banco" class="banco">
+                                <option selected>Seleccionar</option>
+                                <option value="factura">Factura</option>
+                                <option value=".">...</option>
+                                <option value="..">...</option>
+                            </select>
+                        </div>
+                    </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="transBancaria" name="transBancaria">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label" for="transBancaria">Otra forma de pago:</label>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-5">
+                    <div class="form-check">
+                        <select id="areaGestora" class="form-control" name="banco" class="banco">
+                            <option selected>Seleccionar</option>
+                            <option value="factura">Factura</option>
+                            <option value=".">...</option>
+                            <option value="..">...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-row ">
+                <div class="col-md-2"></div>
+                <div class="form-group col-md-2 centro">
+                    <button id="pasoAnterior" class="btn btn-primary">&lt;&lt;Paso Anterior</button>
+                </div>
+                <div class="form-group col-md-2 centro">
+                    <button id="pasoAnterior" class="btn btn-primary">Recalcular</button>
+                </div>
+                <div class="form-group centro col-md-2">
+                    <button type="submit" id="pasoAnterior" class="btn btn-primary">Paso Siguiente&gt;&gt;</button>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+
+        var contenido = '';
+
+        $(document).ready(function(){
+            $('#añadir').click(function(e){
+
+                var tmp = '<tr>';
+                tmp = tmp + '<td>' + $("#campo1").val() + '</td>';
+                tmp = tmp + '<td>' + $("#campo2").val() + '</td>';
+                tmp = tmp + '<td>' + $("#campo3").val() + '</td>';
+                
+                tmp = tmp + '<td></td>';
+                tmp = tmp + '<td></td>';
+                
+
+                tmp = tmp + '</tr>';
+
+                contenido = contenido + tmp;
+
+                $('#tBody').html(contenido);
+
+                e.preventDefault();
+            });
+            
+        });
+        $('#index-form').validate({
+            rules:
+                {
+                    expedicion: {
+                        required: true
+                    },
+                    oficinaContable: {
+                        required: true
+                    },
+                    organoGestor: {
+                        required: true
+                    },
+                    unidadTramitadora: {
+                        required: true
+                    }
+                },
+                messages:
+                {
+                    expedicion: {
+                        required: "Campo obligatorio"
+                    },
+                    oficinaContable: {
+                        required: "Campo obligatorio"
+                    },
+                    organoGestor: {
+                        required: "Campo obligatorio"
+                    },
+                    unidadTramitadora: {
+                        required: "Campo obligatorio"
+                    }
+                },
+                errotPlacement : function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight : function(element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    $(element).closest('.form-group').find('.help-block').html('');
+                },
+                submitHandler : function(form){
+                    form.submit();
+                    alert('ok');
+            }
+        });
+    </script>
+</body>
+</html>

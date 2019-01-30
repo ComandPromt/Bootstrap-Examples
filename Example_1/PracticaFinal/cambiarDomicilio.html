@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="DataTables/datatables.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script> 
+    <script src="js/utils.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5><a href="./index.html">Registro de Facturas</a></h5>
+                    <h5><a href="./cambiarDomicilio.html">Cambiar de Domicilio</a></h5>
+                    <h5><a href="./domiciliacion.html">Domiciliaci&oacute;n</a></h5>
+                    <h5><a href="./expedientes.html">Expedientes y Valores</a></h5>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="container">
+        <h5 class="titulo">Cambiar Domicilio</h5>
+        <p class="negrita">Desde esta pantalla usted podr&aacute; solictar un cambio de domicilio para usted u otros miembros de su hoja padronal</p>
+        <p>El proceso de solicitud consta de varios pasos:</p>
+        <ul>
+            <li>Seleccionar los habitantes para cambiar de domicilio</li>
+            <li>Indicar el domicilio de destino</li>
+            <li>Confirmar la solicitud</li>
+            <li>Aportar la documentaci&oacute;n necesaria en la entidad para confirmar la operaci&oacute;n</li>
+        </ul>
+        <p>El cambio de domicilio requiere un acto presencial donde deber&aacute; aportar los documentos que se consideren necesarios</p>
+        <p class="negrita">1. Seleccione los miembros de su hoja padronal para los que desea solicitar un cambio de domicilio.</p>
+        <input type="checkbox">
+        <label>RODRIGUEZ LANCHARRO, SARA</label><br/>
+        <input type="checkbox">
+        <label>APELLIDO APELLIDO, NOMBRE</label>
+        <p class="negrita">2. A continuaci&oacute;n debe indicar el domicilio de destino de los habitantes</p>
+
+        <form id="cambiarDomicilio-form">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="selectTipoVia">Tipos de Vias:</label>
+                        <select id="selectTipoVia" name="selectTipoVia" class="form-control">
+                            <option value="" selected>Seleccionar</option>
+                            <option value="4">...</option>
+                            <option value="5">...</option>
+                            <option value="6">...</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="desVia">Descripci&oacute;n V&iacute;a:</label>
+                        <input type="text" class="form-control" name="desVia" id="desVia">
+                        <span class="help-block" id="error"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <button type="button" id="btnBuscar" class="btn btn-primary">Buscar V&iacute;a</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="inputState">Nº:</label>
+                        <input type="number" class="form-control" name="numero" id="numero">
+                        <span class="help-block" id="error"></span>
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="inputState">Letra:</label>
+                        <input type="text" class="form-control" name="letra" id="letra">
+                        <span class="help-block" id="error"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputState">Bloque:</label>
+                        <input type="text" class="form-control" name="bloque" id="bloque">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputState">Portal:</label>
+                        <input type="text" class="form-control" name="portal" id="portal">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputState">Escalera:</label>
+                        <input type="text" class="form-control" name="escalera" id="escalera">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputState">Planta:</label>
+                        <input type="number" class="form-control" name="planta" id="planta">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputState">Puerta:</label>
+                        <input type="text" class="form-control" name="puerta" id="puerta">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Kil&oacute;metro:</label>
+                        <input type="number" class="form-control" name="kilometro" id="kilometro">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Hect&oacute;metro:</label>
+                        <input type="number" class="form-control" name="hectometro" id="hectometro">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">C&oacute;digo Postal:</label>
+                        <input type="number" class="form-control" name="cPostal" id="cPostal">
+                    </div>
+                </div>
+                <div class="form-row mx-auto">
+                    <div class="form-group col-md-12 centro">
+                        <button type="submit" class="btn btn-primary">Continuar</button>
+                    </div>
+                </div>
+            </form>
+            <p><a class="tabla" href="./tablaCambiarDomicilio.html">Ver Tabla</a></p>
+    </div>
+
+    <script>
+        $('#cambiarDomicilio-form').validate({
+            rules:
+                {
+                    selectTipoVia: {
+                        required: true
+                    },
+                    desVia: {
+                        required: true
+                    },
+                    numero: {
+                        required: true
+                    },
+                    letra: {
+                        required: true
+                    }
+                },
+                messages:
+                {
+                    selectTipoVia: {
+                        required: "Campo obligatorio"
+                    },
+                    desVia: {
+                        required: "Campo obligatorio"
+                    },
+                    numero: {
+                        required: "Campo obligatorio"
+                    },
+                    letra: {
+                        required: "Campo obligatorio"
+                    }
+                },
+                errotPlacement : function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight : function(element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    $(element).closest('.form-group').find('.help-block').html('');
+                },
+                submitHandler : function(form){
+                    form.submit();
+                    alert('ok');
+            }
+        });
+    </script>
+</body>
+</html>
