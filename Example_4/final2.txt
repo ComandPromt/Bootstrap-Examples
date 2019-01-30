@@ -1,0 +1,55 @@
+{
+  "draw": 1,
+  "recordsTotal": 10,
+  "recordsFiltered": 10,
+  "data": [
+    {
+      "DT_RowId": "row_5",
+      "persona": "Diego Cruz",
+      "tipo": "Calle",
+      "numero": "21",
+      "cp": "41400",
+      "letra": "A",
+      "bloque": "1",
+      "portal": "2",
+      "escalera": "2",
+      "planta": "1&deg;",
+      "puerta": "1",
+      "km": "57",
+      "hm": "570",
+      "descri": "Estatuto de autonom&iacute;a"
+    },
+    {
+      "DT_RowId": "row_25",
+      "persona": "Manuel de la Rosa",
+      "tipo": "Calle",
+      "numero": "32",
+      "cp": "41400",
+      "letra": "C",
+      "bloque": "5",
+      "portal": "2",
+      "escalera": "1",
+      "planta": "3&deg;",
+      "puerta": "2",
+      "km": "5",
+      "hm": "50",
+      "descri": "Calle Feria"
+    },
+    {
+      "DT_RowId": "row_3",
+      "persona": "Miguel S&aacute;nchez",
+      "tipo": "Calle",
+      "numero": "12",
+      "cp": "41439",
+      "letra": "A",
+      "bloque": "1",
+      "portal": "2",
+      "escalera": "2",
+      "planta": "1\u00B0",
+      "puerta": "1",
+      "km": "7",
+      "hm": "70",
+      "descri": "Calle Alemania"
+    }
+  ]
+}

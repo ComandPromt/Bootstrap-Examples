@@ -1,0 +1,61 @@
+{
+  "draw": 1,
+  "recordsTotal": 10,
+  "recordsFiltered": 10,
+  "data": [
+    {
+      "DT_RowId": "row_1",
+      "tipo": "Factura",
+      "fecha": "15/5/2020",
+      "serie": "123456",
+      "numero": "654321",
+      "dep": "Contable",
+      "ref": "0000012233",
+      "pc": "Manuel de la Rosa Cruz",
+      "oc": "2",
+      "ofc": "23",
+      "org": "21",
+      "unt": "2001",
+      "arg": "1",
+      "desde": "15/5/2020",
+      "hasta": "15/6/2020",
+      "desc": "Factura de compra de esclavos"
+    },
+    {
+      "DT_RowId": "row_2",
+      "tipo": "Recibo",
+      "fecha": "2/2/2018",
+      "serie": "456789",
+      "numero": "654987",
+      "dep": "21",
+      "ref": "00001235",
+      "pc": "Diego Cruz",
+      "oc": "21",
+      "ofc": "23",
+      "org": "6",
+      "unt": "2001",
+      "arg": "3",
+      "desde": "2/2/2018",
+      "hasta": "2/3/2018",
+      "desc": "Recibo de venta de armas"
+    },
+    {
+      "DT_RowId": "row_3",
+      "tipo": "Factura",
+      "fecha": "3/2/2018",
+      "serie": "456790",
+      "numero": "654988",
+      "dep": "21",
+      "ref": "00001236",
+      "pc": "Diego Cruz",
+      "oc": "2",
+      "ofc": "23",
+      "org": "5",
+      "unt": "2001",
+      "arg": "4",
+      "desde": "3/2/2018",
+      "hasta": "3/3/2018",
+      "desc": "Factura de pago de fianza"
+    }
+  ]
+}

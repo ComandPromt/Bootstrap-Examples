@@ -1,0 +1,24 @@
+.table-dark tbody {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    margin-top: 1%;
+    width: 100%;
+}
+
+.nomargin-bot {
+    margin-bottom:0px !important;
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap&JQuery/datatables.min.css">
+    <link rel="stylesheet" href="Bootstrap&JQuery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap&JQuery/FicherosFijos/tables.css">
+    <link rel="stylesheet" href="final.css">
+    <script src="Bootstrap&JQuery/jquery-3.3.1.min.js"></script>
+    <script src="Bootstrap&JQuery/dist/jquery.validate.min.js"></script>
+    <script src="Bootstrap&JQuery/js/bootstrap.min.js"></script>
+    <script src="Bootstrap&JQuery/datatables.min.js"></script>
+</head>
+
+<body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-2 text-center row list-inline list-group-flush mx-auto">
+                <ul class="list-inline list-group-flush nomarginBot">
+                    <li class="list-inline-item col-md-1"><a href="final.html"> Página 1</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal.html"> Tabla 1</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final2.html"> Página 2</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal2.html"> Tabla 2</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final3.html"> Página 3</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal3.html"> Tabla 3</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final4.html"> Página 4</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row cab ini">
+            <div class="col-md-12">Cambiar domicilio</div>
+        </div>
+        <div class="col-md-12">
+            <p><b>Desde esta pantalla usted podrá solicitar un cambio de domicilio para usted u otros miembros de
+                    su hoja padronal</b></p>
+            <p>El proceso de solicitud consta de varios pasos:</p>
+            <ul>
+                <li>Seleccionar los habitantes para cambiar de domicilio</li>
+                <li>Indicar el domicilio de destino</li>
+                <li>Confirmar la solicitud</li>
+                <li>Aportar la documentación necesaria en la entidad para confirmar la operación</li>
+            </ul>
+            <p>El cambio de domicilio requiere un acto presencial donde deberá aportar los documentos que se
+                consideren necesarios</p>
+            <p><b>1. Seleccione los miembros de su hoja padronal para os que desea solicitar un cambio de domicilio</b></p>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="acc">
+                    <label class="form-check-label" for="acc">
+                        CRUZ DÍAZ, JESÚS DIEGO
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="acc">
+                    <label class="form-check-label" for="acc">
+                        SÁNCHEZ TORRIJO, MIGUEL
+                    </label>
+                </div>
+            </div>
+            <p><b>2. A continuación debe indicar el domicilio de destino de los habitantes</b></p>
+        </div>
+        <form id="register-form2" class="register-form2">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="tipVia">Tipo de Vía</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <select id="tipVía" class="form-control" name="tipVía">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Opción 1</option>
+                        <option value="2">Opción 2</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <p>Puede localizar su vía indicando parte de su nombre y buscándola</p>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="desVia">Descripción Vía</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="desVia" id="desVia" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-1">
+                    <button id="buscar" name="buscar" class="btn btn-primary">Buscar Vía</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="num">Número</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="num" id="num" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-2">
+                    <label for="let">Letra</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="let" id="let" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="blo">Bloque</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="blo" id="blo" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-2">
+                    <label for="por">Portal</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="por" id="por" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="esc">Escalera</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <select id="esc" class="form-control" name="esc">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Opción 1</option>
+                        <option value="2">Opción 2</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-2">
+                    <label for="pla">Planta</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <select id="pla" class="form-control" name="pla">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Opción 1</option>
+                        <option value="2">Opción 2</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="pue">Puerta</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="pue" id="pue" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-1">
+                    <label for="km">Kilómetro</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="km" id="km" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-1">
+                    <label for="hm">Hectómetro</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="hm" id="hm" class="form-control">
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Continuar</button>
+                </div>
+            </div><br>
+        </form>
+    </div>
+
+    <script>
+        $('document').ready(function () {
+
+            $(document).ready(function () {
+                $('#buscar').click(function (e) {
+                    e.preventDefault();
+                });
+            });
+
+            var number = /^[0-9]+$/;
+
+            $.validator.addMethod('validNumber', function (value, element) {
+                return this.optional(element) || number.test(value);
+            })
+
+            var letter = /^[a-zA-Z]+$/;
+
+            $.validator.addMethod('validLetter', function (value, element) {
+                return this.optional(element) || letter.test(value);
+            })
+
+            $('#register-form2').validate({
+                rules:
+                {
+                    tipVía: {
+                        required: true
+                    },
+                    desVia: {
+                        required: true
+                    },
+                    num: {
+                        required: true,
+                        number: true,
+                        maxlength: 2
+                    },
+                    let: {
+                        required: true,
+                        validLetter: true,
+                        maxlength: 2
+                    },
+                    blo: {
+                        required: true
+                    },
+                    por: {
+                        required: true
+                    },
+                    esc: {
+                        required: true
+                    },
+                    pla: {
+                        required: true,
+                        number: true,
+                        maxlength: 2
+                    },
+                    pue: {
+                        required: true,
+                        maxlength: 2
+                    },
+                    km: {
+                        required: true,
+                        number: true
+                    },
+                    hm: {
+                        required: true,
+                        number: true
+                    }
+                },
+                messages:
+                {
+                    tipVía: {
+                        required: "Por favor, indique una tipo de vía"
+                    },
+                    desVia: {
+                        required: "Por favor, indique una descripción de vía"
+                    },
+                    num: {
+                        required: "Por favor, indique una número",
+                        number: "Solo se permiten números aquí",
+                        maxlength: "Solo se permiten dos cifras"
+                    },
+                    let: {
+                        required: "Por favor, indique una letra",
+                        validLetter: "Solo se permiten letras",
+                        maxlength: "Solo se permiten dos letras"
+                    },
+                    blo: {
+                        required: "Por favor, indique un bloque"
+                    },
+                    por: {
+                        required: "Por favor, indique un portal"
+                    },
+                    esc: {
+                        required: "Por favor, indique una escalera"
+                    },
+                    pla: {
+                        required: "Por favor, indique una planta",
+                        number: "Solo se permiten números aquí",
+                        maxlength: "Solo se permiten dos cifras"
+                    },
+                    pue: {
+                        required: "Por favor, indique una puerta",
+                        maxlength: "Solo se permiten dos caracteres"
+                    },
+                    km: {
+                        required: "Por favor, indique un kilómetro",
+                        number: "Solo se permiten números aquí"
+                    },
+                    hm: {
+                        required: "Por favor, indique un hectómetro",
+                        number: "Solo se permiten números aquí"
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    $(element).closest('.form-group').find('.help-block').html('');
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                    alert('ok');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

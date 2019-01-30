@@ -1,0 +1,46 @@
+{
+  "draw": 1,
+  "recordsTotal": 10,
+  "recordsFiltered": 10,
+  "data": [
+    {
+      "DT_RowId": "row_1",
+      "persona": "Diego Cruz",
+      "doc": "15151515F",
+      "bic": "123456",
+      "tip": "Nueva",
+      "nom": "Jesús Diego Cruz Díaz",
+      "ban": "2222",
+      "suc": "3333",
+      "dc": "21",
+      "cue": "2321232123",
+      "iban": "1326"
+    },
+    {
+      "DT_RowId": "row_2",
+      "persona": "Iratxe Alarcón",
+      "doc": "15153456F",
+      "bic": "734567",
+      "tip": "Nueva",
+      "nom": "Iratxe Alarcón Ors",
+      "ban": "2222",
+      "suc": "3333",
+      "dc": "21",
+      "cue": "2321232121",
+      "iban": "1323"
+    },
+    {
+      "DT_RowId": "row_3",
+      "persona": "Miguel Sánchez",
+      "doc": "15153333A",
+      "bic": "123754",
+      "tip": "Existente",
+      "nom": "Miguel Sánchez Torrijo",
+      "ban": "5555",
+      "suc": "5555",
+      "dc": "55",
+      "cue": "2345549890",
+      "iban": "5555"
+    }
+  ]
+}

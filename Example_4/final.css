@@ -1,0 +1,49 @@
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    margin-top: 1%;
+    width: 100%;
+}
+.rojo{
+    color:red;
+    font-weight: bold;
+}
+.ini{
+    margin-top:2%;
+}
+.cab {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5% 0%;
+    font-size: 1.1rem;
+    margin-bottom: 2%;
+}
+.tfoot1, .tfoot1 th{
+    background-color: silver;
+    border: 1px solid black;
+}
+.table-dark{
+    font-size: 0.7rem;
+}
+#error{
+    color:red;
+}
+
+.chk [class*='col-']{
+    background-color: #C0C0C0;
+    border: 1px solid black;
+}
+
+.nomargin-bot {
+    margin-bottom:0px !important;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap&JQuery/datatables.min.css">
+    <link rel="stylesheet" href="Bootstrap&JQuery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap&JQuery/FicherosFijos/tables.css">
+    <link rel="stylesheet" href="tablaFinal.css">
+    <script src="Bootstrap&JQuery/jquery-3.3.1.min.js"></script>
+    <script src="Bootstrap&JQuery/dist/jquery.validate.min.js"></script>
+    <script src="Bootstrap&JQuery/js/bootstrap.min.js"></script>
+    <script src="Bootstrap&JQuery/datatables.min.js"></script>
+</head>
+
+<body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-2 text-center row list-inline list-group-flush mx-auto">
+                <ul class="list-inline list-group-flush nomarginBot">
+                    <li class="list-inline-item col-md-1"><a href="final.html"> Página 1</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal.html"> Tabla 1</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final2.html"> Página 2</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal2.html"> Tabla 2</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final3.html"> Página 3</a></li>
+                    <li class="list-inline-item col-md-1"><a href="tablaFinal3.html"> Tabla 3</a></li>
+                    <li class="list-inline-item col-md-1"><a href="final4.html"> Página 4</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="table-responsive">
+            <table id="exampleAjax" class="table table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Persona</th>
+                        <th>Documento</th>
+                        <th>BIC</th>
+                        <th>Cuenta</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Persona</th>
+                        <th>Documento</th>
+                        <th>BIC</th>
+                        <th>Cuenta</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        function format(d) {
+            return '' +
+                'Nombre: ' + d.nom + '<br>' +
+                'Banco: ' + d.ban + '<br>' +
+                'Sucursal: ' + d.suc + '<br>' +
+                'DC: ' + d.dc + '<br>' +
+                'Cuenta: ' + d.cue + '<br>' +
+                'IBAN: ' + d.iban + '<br>';
+        }
+
+        $('document').ready(function () {
+
+            var dt = $('#exampleAjax').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": 'final3.txt',
+                "columns": [
+                    {
+                        "class": "details-control",
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ""
+                    },
+                    { "data": "persona" },
+                    { "data": "doc" },
+                    { "data": "bic" },
+                    { "data": "tip" }
+                ],
+                "order": [[1, 'asc']],
+                "language": {
+                    "decimal": ".",
+                    "emptyTable": "No hay datos para mostrar",
+                    "info": "del _START_ al _END_ (_TOTAL_ total)",
+                    "infoEmpty": "del 0 al 0 (0 total)",
+                    "infoFiltered": "(filtrado de todas las _MAX_ entradas)",
+                    "infoPostFix": "",
+                    "thousands": "'",
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "No hay resultados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "aria": {
+                        "sortAscending": ": ordenar de manera Ascendente",
+                        "sortDescending": ": ordenar de manera Descendente",
+                    }
+                }
+            });
+
+            var detailRows = [];
+
+            $('#exampleAjax tbody').on('click', 'tr td.details-control', function () {
+                var tr = $(this).closest('tr');
+                var row = dt.row(tr);
+                var idx = $.inArray(tr.attr('id'), detailRows);
+
+                if (row.child.isShown()) {
+                    tr.removeClass('details');
+                    row.child.hide();
+
+                    detailRows.splice(idx, 1);
+                } else {
+                    tr.addClass('details');
+                    row.child(format(row.data())).show();
+
+                    if (idx === -1) {
+                        detailRows.push(tr.attr('id'));
+                    }
+                }
+            });
+
+            dt.on('draw', function () {
+                $.each(detailRows, function (i, id) {
+                    $('#' + id + ' td.details-control').trigger('click');
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

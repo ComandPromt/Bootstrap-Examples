@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Domiciliacion</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Placed at the end of the document so the pages load faster -->
+    <style>
+        .titulo {
+                background-color: black;
+                color: white;
+                text-align: center
+            }
+        .azul {
+            color: blue;
+            }
+        .tabla{
+            border:solid black 1px;
+            background-color: gray;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="RegistroFactura.html">Registro de Facturas<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CambiarDomicilio.html">Cambiar domicilio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Domiciliacion.html">Domiciliacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ExpedienteValores.html">Expediente y valores</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <form id="fomularioDomiciliacion">
+        <div class="container">
+            <div class="form-row titulo">
+                <div class="col-md-12">
+                    <h2>Domiciliaci&oacute;n Bancaria</h2>
+                </div>
+            </div>
+            <div id="form-group">
+                <div class="form-row">
+                    <div class="col-md-6 ">
+                        <label for="inputEmail4">Persona:</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3">
+                        <select id="persona" name="persona" class="form-control">
+                            <option>Seleccionar</option>
+                            <option>00000000A-Juan de Dios</option>
+                            <option>00000000B-Daniel</option>
+                            <option>...</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary">Seleccionar</button>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-row">
+                        <label for="">Documento: <span class="azul"> 00000000A </span></label>
+                    </div>
+                    <div class="form-row">
+                        <label for="">Nombre / Razón social: <span class="azul"> Juan de Dios Bermudo Delgado </span></label>
+                    </div>
+                    <div class="form-row">
+                        <label for="">Direcci&oacute;n: <span class="azul"> Calle Inventada Nº0041</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row titulo">
+                <div class="col-md-12">
+                    <h2>Expedientes y Valores Seleccionados</h2>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-1 tabla">
+                        <input class="" type="checkbox" id="gridCheck">
+                    </div>
+                    <div class="col-md-11 tabla">
+                        <label>VEH-638021- VEHICULOS DE TRACCION MECANICA-A.MATRICULA: -1158-FPB--CCC/SEPA:</label>
+                    </div>
+                    <p>Esta opci&oacute;n est&aacute; cuadno todos los expedientes y valores est&aacute;n domiciliados</p>
+                </div>
+            </div>
+            <div class="form-row titulo">
+                <div class="col-md-12">
+                    <h2>Nueva Domiciliaci&oacute;n</h2>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="form-row col-md-6">
+                    <label>Cuenta Nueva</label>
+                    <select class="form-control">
+                        <option value="cuentaNueva">Cuenta Nueva</option>
+                    </select>
+                </div>
+                <p class="font-weight-bold">Titular</p>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-2">
+                        <label>Documento</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Nombre</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-1">
+                        <label for="">Banco</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="">Sucursal</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="">DC</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Cuenta</label>
+                        <input class="form-control" type="text" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="">BIC</label>
+                        <select class="form-control">
+                            <option value="Seleccionar">Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="">IBAN</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-4">
+                <a class="btn btn-primary px-5" href="#">Continuar</a>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/Chart.min.js"></script>
+
+
+
+
+</body>
+
+</html>

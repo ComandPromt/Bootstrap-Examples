@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cambiar Domicilio</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datatables.min.css">
+
+    <!-- jQuery library -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <style>
+        .titulo {
+                background-color: black;
+                color: white;
+                text-align: center
+            }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="RegistroFactura.html">Registro de Facturas<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CambiarDomicilio.html">Cambiar domicilio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Domiciliacion.html">Domiciliacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ExpedienteValores.html">Expediente y valores</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <form id="formularioDomicilio">
+        <div class="container">
+            <div class="form-row titulo">
+                <div class="col-md-12">
+                    <h2>Cambiar Domicilio</h2>
+                </div>
+            </div>
+            <div id="form-group">
+                <p class="font-weight-bold">Desde esta pantalla usted podrá solicitar un cambio de domicilio para usted u otros miembros de su
+                    hoja
+                    padronal</p>
+                <p>El proceso de solicitud consta de varios pasos:</p>
+                <ul>
+                    <li>Seleccionar los habitantes para cambiar de domicilio</li>
+                    <li>Indicar la solicitud</li>
+                    <li>Confirmar Solicitud</li>
+                    <li>Aportar la documentaci&oacute;n necesaria en la entidad para confirmar la operaci&oacute;n</li>
+                </ul>
+                <p>El cambio de domicilio requiere un acto presencial donde deberá aportar los documentos que se
+                    consieren
+                    necesarios</p>
+            </div>
+            <div class="form-group">
+                <p class="font-weight-bold">1. Seleccione lo miembros de su hoja padronal para los que desea solicitar un cambio de domicilio</p>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Bermudo Delgado, Juan de Dios</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Apellidos1 Apellidos2,NombrePrueba</label>
+                    </div>
+                </div>
+                <p class="font-weight-bold">2. A continuacion debe indicar el domicilio de destino de los habitantes</p>
+            </div>
+            <div id="form-group">
+                <div class="form-row">
+                    <label for="">Tipo de Vía</label>
+                    <select class="form-control">
+                        <option value="Seleccionar">Seleccionar</option>
+                    </select>
+                </div>
+                <p>Puede localizar su vía indicando parte de su nombre y busc&aacute;ndola</p>
+                <div class="form-row">
+                    <label class="col-md-2" for="">Descripci&oacute; de Vía</label>
+                    <button class="btn btn-primary px-4 col-md-2">Buscar Vía</button>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label for="">N&uacute;mero</label>
+                        <input class="form-control" type="number" id="numero" name="numero">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Letra</label>
+                        <input class="form-control" type="text" id="letra" name="letra">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Bloque</label>
+                        <input class="form-control" type="text" id="bloque" name="bloque">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label for="">Portal</label>
+                        <input class="form-control" type="number" id="portal" name="portal">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Escalera</label>
+                        <select class="form-control" name="esclera" id="escalera">
+                            <option value="Selecciona">Selecciona</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Planta</label>
+                        <input class="form-control" type="number" id="planta" name="planta">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label for="">Puerta</label>
+                        <input class="form-control" type="number" id="puerta" name="puerta">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Kil&oacute;metro</label>
+                        <input class="form-control" type="number" id="kilometro" name="kilometro">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Hect&oacute;metro</label>
+                        <input class="form-control" type="number" id="hectometro" name="hectometro">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <a class="btn btn-primary px-5" href="Domiciliacion.html">Continuar</a>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
