@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
+    <link rel="stylesheet" href="practica_final.css">
+    <script src="../bootstrap/jquery-3.3.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/jquery.validate.js"></script>
+    <script src="../DataTables/datatables.js"></script>
+    <title>Domiciliaci&oacute;n Bancaria</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal1.html">Registro de Facturas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal2.html">Cambiar Domicilio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PracticaFinal3.html">Domiciliaci&oacute;n</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal4.html">Expedientes y valores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinalTabla.html">Tabla de facturas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+                <div class="col-md-12"></div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Domiciliaci&oacute;n Bancaria</h2>
+            </div>
+        </div>
+        <br>
+        <form>
+            <div class="form-row">
+                <div class="col-md-12">
+                    <label for="selectPersona">Persona:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+
+                    <select id="selectPersona" name="selectPersona" class="form-control">
+                        <option selected>Seleccionar persona</option>
+                        <option>14621307T - AMELIA PANIAGUA G&Aacute;lvez</option>
+                        <option>00000000W - DIEGO CRUZ DIAZ</option>
+                        <option>11111111L - MIGUEL SANCHEZ SANCHEZ</option>
+                    </select>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div id="form-group">
+                    <div class="col-md-12">Documento: 14621307T</div>
+                    <div class="col-md-12">Nombre / Raz&oacute;n Social: PANIAGUA G&Aacute;LVEZ AMELIA</div>
+                    <div class="col-md-12">Direcci&oacute;n: ABOGADO JUAN ANTONIO GAMERO Nº18</div>
+                </div>
+            </div>
+        </form>
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Expedientes y Valores Seleccionados</h2>
+            </div>
+        </div>
+        <br>
+        <form>
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div id="check1" class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="gridCheck1">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="gridCheck1">
+                        VEH-638021 - VEHICULOS DE TRACCION MECANICA - A.MATRICULA: -1156-FPB -- CCC/SEPA:
+                    </label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    Esta opci&oacute;n est&aacute; activa cuando todos los expedientes y valores seleccionados est&aacute;n domiciliados
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Nueva Domiciliaci&oacute;n</h2>
+            </div>
+        </div>
+        <br>
+        <form id="form1">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="cuentaB">Cuenta Bancaria</label>
+                    <select id="cuentaB" name="cuentaB" class="form-control">
+                        <option value=""> Seleccionar</option>
+                        <option value="1">Cuenta Nueva</option>
+                        <option value="2">Cuenta Existente</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    Titular
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="doc">Documento</label>
+                    <input type="text" class="form-control" id="doc" name="doc" disabled/>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" disabled />
+                </div>
+            </div>
+
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="banco">Banco</label>
+                    <input type="text" class="form-control" id="banco" name="banco" disabled/>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="sucursal">Sucursal</label>
+                    <input type="text" class="form-control" id="sucursal" name="sucursal" disabled/>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="dc">DC</label>
+                    <input type="text" class="form-control" id="dc" name="dc" disabled/>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="cuenta">Cuenta</label>
+                    <input type="text" class="form-control" id="cuenta" name="cuenta" disabled/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="bic">BIC</label>
+                    <select id="bic" name="bic" class="form-control">
+                        <option value=""> Seleccionar</option>
+                        <option value="1">BIC 1</option>
+                        <option value="2">BIC 2</option>
+                        <option value="3">BIC 3</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="iban">IBAN</label>
+                    <input type="text" class="form-control" id="iban" name="iban" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button class="btn btn-primary" id="volver">Volver</button>
+                    <button type="submit" class="btn btn-primary" id="Continuar">Continuar</button>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        $('document').ready(function() {
+
+            $("#form1").validate({
+                rules: {
+                    cuentaB: {
+                        required: true,
+                        minlength: 1
+                    },
+                    bic: {
+                        required: true,
+                        minlength: 1
+                    },
+                    iban: {
+                        required: true,
+                        maxlength: 34
+                    }
+                },
+                messages: {
+
+                    cuentaB: {
+                        required: "Por favor, seleccione una cuenta bancaria.",
+                        minlength: "Es obligatorio seleccionar una opción."
+                    },
+                    bic: {
+                        required: "Por favor, indique un BIC.",
+                        minlength: "Es obligatorio seleccionar una opción."
+                    },
+                    iban: {
+                        required: "Por favor, indique un IBAN.",
+                        maxlength: "Máximo 34 caracteres."
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function(element) {
+                    $(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-sucess');
+                    $(element).closest('.form-group').find('.help-block').html(' ');
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                    alert('OK');
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

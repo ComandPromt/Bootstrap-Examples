@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
+    <link rel="stylesheet" href="practica_final.css">
+    <script src="../bootstrap/jquery-3.3.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/jquery.validate.js"></script>
+    <script src="../DataTables/datatables.js"></script>
+    <title>Expedientes y valores</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal1.html">Registro de Facturas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal2.html">Cambiar Domicilio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal3.html">Domiciliaci&oacute;n</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PracticaFinal4.html">Expedientes y valores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinalTabla.html">Tabla de facturas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Domiciliaci&oacute;n Bancaria</h2>
+            </div>
+        </div>
+        <br>
+        <form id="form1">
+            <div class="form-row">
+                <div class="col-md-12">
+                    <label for="selectPersona">Persona:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+
+                    <select id="selectPersona" name="selectPersona" class="form-control">
+                        <option selected>Seleccionar persona</option>
+                        <option>14621307T - AMELIA PANIAGUA G&Aacute;lvez</option>
+                        <option>00000000W - DIEGO CRUZ DIAZ</option>
+                        <option>11111111L - MIGUEL SANCHEZ SANCHEZ</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div id="form-group">
+                    <div class="col-md-12">Documento: 14621307T</div>
+                    <div class="col-md-12">Nombre / Raz&oacute;n Social: PANIAGUA G&Aacute;LVEZ AMELIA</div>
+                    <div class="col-md-12">Direcci&oacute;n: ABOGADO JUAN ANTONIO GAMERO Nº18</div>
+                </div>
+            </div>
+        
+            <br />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="bl1">Expedientes y Valores</h2>
+                </div>
+            </div>
+            <br>
+        
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check1" name="check1">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="check1">
+                        IAE-114903 - IMPUESTO DE ACTIVIDADES ECONOMICAS - REFERENCIA: 7280000000070 - CCC/SEPA:
+                    </label>
+                </div>
+            </div>
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check2" name="check2">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="check2">
+                        IAE-114901 - IMPUESTO DE ACTIVIDADES ECONOMICAS - REFERENCIA: 7280000000070 - CCC/SEPA: BBVAESMMXXX - ES207 4564654968765465465
+                    </label>
+                </div>
+            </div>
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check3" name="check3">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="check3">
+                        IAE-115041 - IMPUESTO DE ACTIVIDADES ECONOMICAS - REFERENCIA: 7280000000070 - CCC/SEPA:
+                    </label>
+                </div>
+            </div>
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check4" name="check4">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="check4">
+                        VEH-636801 - VEHICULOS DE TRACCION MECANICA - A.MATRICULA:  -- CCC/SEPA:
+                    </label>
+                </div>
+            </div>
+            <div class="form-row borde">
+                <div class="form-group col-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check5" name="check5">
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="check5">
+                        VEH-638021 - VEHICULOS DE TRACCION MECANICA - A.MATRICULA: -1156-FPB -- CCC/SEPA:
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6"></div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary" id="modificar">Modificar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        $('document').ready(function() {
+
+            $("#form1").validate({           
+                rules: {
+                    selectPersona: {
+                        required: true,
+                        minlength: 1,
+                    }
+                },
+                messages: {
+                    selectPersona: {
+                        required: "Por favor, seleccione una persona.",
+                        minlength: "Es obligatorio seleccionar una persona."
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function(element) {
+                    $(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-sucess');
+                    $(element).closest('.form-group').find('.help-block').html(' ');
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                    alert('OK');
+                }
+            });    
+        });
+
+    </script>
+</body>
+
+</html>

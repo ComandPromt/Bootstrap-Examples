@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <script src="bootstrap/jquery-3.3.1.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/jquery.validate.js"></script>
+    <title>Práctica 1</title>
+    <style>
+        #domNotificacion, #newDomNotificacion {
+           text-align: center;
+           background-color: black;
+           color: white;
+       }
+       #fila1, #fila2{
+
+           border: 1px solid black;
+            
+        }
+        #mensaje1{
+            color:red;
+        }
+        #mensaje2{
+            color:white;
+            background-color: black;
+        }
+        .col-md-2 img{
+            width: 20%;
+            padding-top: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="domNotificacion" class="row">
+            <div class="col-md-12">Domicilio de Notificación</div>
+        </div>
+        <br />
+        <form id="form1">
+            <div class="form-row">
+                <div class="col-md-12">
+                    <label for="selectPersona">Persona:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+
+                    <select id="selectPersona" name="selectPersona" class="form-control">
+                        <option selected>Seleccionar persona</option>
+                        <option>14621307T - AMELIA PANIAGUA G&Aacute;lvez</option>
+                        <option>00000000W - DIEGO CRUZ DIAZ</option>
+                        <option>11111111L - MIGUEL SANCHEZ SANCHEZ</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div id="form-group">
+                    <div class="col-md-12">Documento: 14621307T</div>
+                    <div class="col-md-12">Nombre / Raz&oacute;n Social: PANIAGUA G&Aacute;LVEZ AMELIA</div>
+                    <div class="col-md-12">Dirección: ABOGADO JUAN ANTONIO GAMERO Nº18</div>
+                </div>
+            </div>
+            <br />
+            <div class="form-row" id="fila1">
+                <div class="form-group col-md-1">
+                    <div id="check1" class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="gridCheck1">
+                        
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="gridCheck1">PLUSVALIA-00004- Expediente 555F
+                        Liquidación: 18/02/2016 Importe: 21976,04 -</label>
+                </div>
+            </div>
+            <div class="form-row" id="fila2">
+                <div class="form-group col-md-1">
+                    <div id="check2" class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck2" name="gridCheck2">
+                        
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label class="form-check-label" for="gridCheck2">PLUSVALIA-00004- Expediente 555F
+                        Liquidación: 18/02/2016 Importe: 21976,04 -</label>
+                </div>
+            </div>
+
+        </form>
+        <br />
+        <div id="newDomNotificacion" class="row">
+            <div class="col-md-12">Nuevo Domicilio de Notificación</div>
+        </div>
+        <br />
+        <form id="form2">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="selectProvincias">Provincias:</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="selectProvincias" name="selectProvincias" class="form-control">
+                        <option value="">Seleccionar provincia</option>
+                        <option value="1">HUELVA</option>
+                        <option value="2">SEVILLA</option>
+                        <option value="3">C&Oacute;RDOBA</option>
+                        <option value="4">JA&Eacute;N</option>
+                        <option value="5">C&Aacute;DIZ</option>
+                        <option value="6">M&Aacute;LAGA</option>
+                        <option value="7">GRANADA</option>
+                        <option value="8">ALMER&Iacute;A</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="selectMunicipios">Municipios:</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="selectMunicipios" name="selectMunicipios" class="form-control">
+                        <option value="">Seleccionar municipio</option>
+                        <option value="1">HUELVA</option>
+                        <option value="2">SEVILLA</option>
+                        <option value="3">C&Oacute;RDOBA</option>
+                        <option value="4">JA&Eacute;N</option>
+                        <option value="5">C&Aacute;DIZ</option>
+                        <option value="6">M&Aacute;LAGA</option>
+                        <option value="7">GRANADA</option>
+                        <option value="8">ALMER&Iacute;A</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="selectTipoVias">Tipos de V&iacute;as:</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="selectTipoVias" name="selectTipoVias" class="form-control">
+                        <option value=""> Seleccionar v&iacute;a</option>
+                        <option value="1">CALLE</option>
+                        <option value="2">AVENIDA</option>
+                        <option value="3">BARRIADA</option>
+                        <option value="4">CARRETERA</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputDesVia">Descripci&oacute;n V&iacute;as:</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="inputDesVia" name="inputDesVia" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div id="btnLimpiarVia" class="row">
+                <div class="col text-center">
+                    <button type="reset" id="limpiar" class="btn btn-primary">Limpiar V&iacute;a</button>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputN">Nº:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputN" name="inputN"/>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="inputLetra">Letra:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputLetra" name="inputLetra"/>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputBloque">Bloque:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputBloque" name="inputBloque"/>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="inputPortal">Portal:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputPortal" name="inputPortal" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputEscalera">Escalera:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputEscalera" name="inputEscalera" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputPlanta">Planta:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputPlanta" name="inputPlanta" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputPuerta">Puerta:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputPuerta" name="inputPuerta" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="inputKm">Kil&oacute;metro:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputKm" name="inputKm" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="inputHm">Hectómetro:</label>
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="text" class="form-control" id="inputHm" name="inputHm" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div> 
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputCP">Código Postal:</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="inputCP" name="inputCP" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            </br>
+            <div id="btnContinuar" class="row"></div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Continuar</button>
+            </div>
+        </form>
+        <!--<div id="mensaje1" class="row">
+            <div class="col-md-2">
+                <img src="img/img1.svg" alt="">
+            </div>
+            <div class="col-md-10">
+                A continuación debe proceder a confirmar su solicitud y aportar la documentación que fuese necesaria.
+            </div>
+        </div>
+        <br />
+        <div id="mensaje2" class="row">
+            <div class="col-md-2">
+                <img src="img/img2.png" alt="">
+            </div>
+            <div class="col-md-10">
+                Verifique los datos de la misma y compruebe que son correctos antes de continuar, ya que no podrá
+                modificarlos más adelante. Si durante este proceso necesitase modificar estos datos deberá comenzar una
+                solicitud nueva, desde el principio.
+            </div>
+        </div>-->
+        
+    </div>
+    </div>
+
+    <script>
+        $('document').ready(function () {
+
+            $('#limpiar').click(function (e) {
+                $('#inputDesVia').val(' ');
+                e.preventDefault();
+            });
+
+            //Patrón validación letra
+            var letregex = /^[A-Za-z]]{1}$/;
+            
+            $.validator.addMethod('valideletra', function( value, element){
+                return this.optional( element ) || letregex.test(value);
+            })
+            
+            $("#form2").validate({
+                rules:
+                {      
+                    selectProvincias: {
+                        required: true,
+                        minlength: 1
+                    },
+                    selectMunicipios: {
+                        required: true,
+                        minlength: 1
+                    },
+                    selectTipoVias: {
+                        required: true,
+                        minlength: 1
+                    },
+                    inputDesVia: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 100
+                    },
+                    inputN: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputLetra: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 1,
+                        valideletra: true
+                    },
+                    inputBloque: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 1
+                    },
+                    inputPortal: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputEscalera: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputPlanta: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputPuerta: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputKm: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputHm: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputCP: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 5,
+                        number: true
+                    }
+
+                }, 
+                messages: {
+                    selectProvincias: {
+                        required: "Por favor, seleccione una provincia",
+                        minlength: "Debe seleccionar una opción."
+                    },
+                    selectMunicipios: {
+                        required: "Por favor, seleccione un municipio.",
+                        minlength: "Debe seleccionar una opción."
+                    },
+                    selectTipoVias: {
+                        required: "Por favor, seleccione un tipo de vía.",
+                        minlength: "Debe seleccionar una opción."
+                    },
+                    inputDesVia: {
+                        required: "Por favor, indique una descripción para la vía.",
+                        minlength: "Mínimo 10 caracteres.",
+                        maxlength: "Máximo 100 caracteres."
+                    },
+                    inputN: {
+                        required: "Por favor, indique un número.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputLetra: {
+                        required: "Por favor, indique una letra.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 1 carácter.",
+                        valideletra: "Debe introducir una letra"
+                    },
+                    inputBloque: {
+                        required: "Por favor, indique un bloque.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 1 carácter."
+                    },
+                    inputPortal: {
+                        required: "Por favor, indique un portal.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputEscalera: {
+                        required: "Por favor, indique una escalera.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputPlanta: {
+                        required: "Por favor, indique una planta.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputPuerta: {
+                        required: "Por favor, indique una puerta.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputKm: {
+                        required: "Por favor, indique un kilómetro.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputHm: {
+                        required: "Por favor, indique un hectómetro.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputCP: {
+                        required: "Por favor, indique un código postal.",
+                        minlength: "Mínimo 5 carácteres.",
+                        maxlength: "Máximo 5 caracteres.",
+                        number: "Sólo se permiten números"
+                    }
+                    
+                },
+                errorPlacement: function (error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-sucess');
+                    $(element).closest('.form-group').find('.help-block').html(' ');
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                    alert('OK');
+                }
+
+            });
+        
+        });
+
+    </script>
+
+</body>
+
+</html>

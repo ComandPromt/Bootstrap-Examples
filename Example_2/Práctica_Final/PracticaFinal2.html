@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
+    <link rel="stylesheet" href="practica_final.css">
+    <script src="../bootstrap/jquery-3.3.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/jquery.validate.js"></script>
+    <script src="../DataTables/datatables.js"></script>
+    <title>Cambiar Domicilio</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal1.html">Registro de Facturas</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PracticaFinal2.html">Cambiar Domicilio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal3.html">Domiciliación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal4.html">Expedientes y valores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinalTabla.html">Tabla de facturas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+                <div class="col-md-12"></div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Cambiar Domicilio</h2>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <span class="negrita">Desde esta pantalla usted podrá solicitar un cambio de domicilio para usted u otros miembros de su hoja padronal</span><br> El proceso de solicitud consta de varios pasos:<br>
+                <ul>
+                    <li>Seleccionar los habitantes para cambiar de domicilio</li>
+                    <li>Indicar el domicilio de destino</li>
+                    <li>Confirmar la solicitud</li>
+                    <li>Aportar la documentación necesaria en la entidad para confirmar la operación</li>
+                </ul>
+                El cambio de domicilio requiere un acto presencial donde deberá aportar los documentos que se consideren necesarios.<br><br>
+                <span class="negrita">1. Seleccione los miembros de us hoja padronal para los que desea solicitar un cambio de domicilio.</span><br>
+
+                <input type="checkbox" name="nombre1" id="nombre1">&nbsp;PANIAGUA G&Aacute;LVEZ, AMELIA<br>
+                <input type="checkbox" name="nombre2" id="nombre2">&nbsp;APELLIDOUNOPF APELLIDODOSPF PRUEBASPF<br><br>
+                <span class="negrita">2. A continuación debe indicar el domicilio de destino de los habitantes</span>
+                <br><br>
+            </div>
+        </div>
+        <form id="form1">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="selectTipoVias">Tipos de V&iacute;a:</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="selectTipoVias" name="selectTipoVias" class="form-control">
+                            <option value=""> </option>
+                            <option value="1">CALLE</option>
+                            <option value="2">AVENIDA</option>
+                            <option value="3">BARRIADA</option>
+                            <option value="4">CARRETERA</option>
+                        </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    Puede localizar su v&iacute;a indicando parte de su nombre y buscándola
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputDesVia">Descripci&oacute;n V&iacute;a</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="inputDesVia" name="inputDesVia" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <button type="reset" id="limpiar" class="btn btn-primary">Buscar V&iacute;a</button>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputN">N&uacute;mero</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputN" name="inputN" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputLetra">Letra</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputLetra" name="inputLetra" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputBloque">Bloque</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputBloque" name="inputBloque" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPortal">Portal</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputPortal" name="inputPortal" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputEscalera">Escalera:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <select id="selectEscalera" name="selectEscalera" class="form-control">
+                        <option value=""> </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPlanta">Planta:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputPlanta" name="inputPlanta" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputPuerta">Puerta:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputPuerta" name="inputPuerta" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputKm">Kil&oacute;metro:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputKm" name="inputKm" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputHm">Hectómetro:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="inputHm" name="inputHm" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="btn btn-primary" id="continuar1">Continuar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+        $('document').ready(function() {
+
+
+            //Patrón validación letra
+            var letregex = /^[A-Za-z]]{1}$/;
+
+            $.validator.addMethod('valideletra', function(value, element) {
+                return this.optional(element) || letregex.test(value);
+            })
+
+            $("#form1").validate({
+                rules: {
+                    selectTipoVias: {
+                        required: true,
+                        minlength: 1
+                    },
+                    inputDesVia: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 100
+                    },
+                    inputN: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputLetra: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 1,
+                        valideletra: true
+                    },
+                    inputBloque: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 1
+                    },
+                    inputPortal: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    selectEscalera: {
+                        required: true
+                    },
+                    inputPlanta: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputPuerta: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputKm: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    },
+                    inputHm: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 3
+                    }
+                },
+                messages: {
+
+                    selectTipoVias: {
+                        required: "Por favor, seleccione un tipo de vía.",
+                        minlength: "Debe seleccionar una opción."
+                    },
+                    inputDesVia: {
+                        required: "Por favor, indique una descripción para la vía.",
+                        minlength: "Mínimo 10 caracteres.",
+                        maxlength: "Máximo 100 caracteres."
+                    },
+                    inputN: {
+                        required: "Por favor, indique un número.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputLetra: {
+                        required: "Por favor, indique una letra.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 1 carácter.",
+                        valideletra: "Debe introducir una letra"
+                    },
+                    inputBloque: {
+                        required: "Por favor, indique un bloque.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 1 carácter."
+                    },
+                    inputPortal: {
+                        required: "Por favor, indique un portal.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    selectEscalera: {
+                        required: "Por favor, indique una escalera.",
+                        minlength: "Debe seleccionar una opción."
+                    },
+                    inputPlanta: {
+                        required: "Por favor, indique una planta.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputPuerta: {
+                        required: "Por favor, indique una puerta.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputKm: {
+                        required: "Por favor, indique un kilómetro.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    },
+                    inputHm: {
+                        required: "Por favor, indique un hectómetro.",
+                        minlength: "Mínimo 1 carácter.",
+                        maxlength: "Máximo 3 caracteres."
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function(element) {
+                    $(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-sucess');
+                    $(element).closest('.form-group').find('.help-block').html(' ');
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                    alert('OK');
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

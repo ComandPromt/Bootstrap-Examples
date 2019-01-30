@@ -1,0 +1,34 @@
+﻿{
+  "draw": 1,
+  "recordsTotal": 3,
+  "recordsFiltered": 3,
+  "data": [
+    {
+      "DT_RowId": "1",
+      "numero": "1",
+      "fecha": "01/05/2018",
+      "personaContacto": "Amelia Paniagua Gálvez",
+      "expediente": "Expediente 1",
+      "operacionContable": "123",
+      "oficinaContable": "Oficina 1"
+    },
+    {
+      "DT_RowId": "2",
+      "numero": "2",
+      "fecha": "30/09/2018",
+      "personaContacto": "Pepito Pérez",
+      "expediente": "Expediente 2",
+      "operacionContable": "456",
+      "oficinaContable": "Oficina 2"
+    },
+    {
+      "DT_RowId": "3",
+      "numero": "3",
+      "fecha": "31/10/2018",
+      "personaContacto": "Lola Flores",
+      "expediente": "Expediente 3",
+      "operacionContable": "789",
+      "oficinaContable": "Oficina 3"
+    }
+  ]
+}

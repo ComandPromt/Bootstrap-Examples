@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Practica 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+
+</head>
+<body>
+	<div class="container">
+		<form>
+            <h5 class="titleh5">Domicilio de Notificación</h5>
+            <div class="row mt-3">
+                <div class="form-group col-md-6">
+                <label for="inputState">Persona:</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Seleccionar</option>
+                    <option>0000001-Rafael Alvare-Ossorio Martin</option>
+                    <option>...</option>
+                </select>
+                    <span class="help-block" id="error"></span>                    
+                </div>
+                <div class="inputSelect form-group col-md-6">
+                        <button type="submit" class="btn btn-primary">Seleccionar</button>
+                </div>                
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <label class="label-sub-title">Documento: <span class="span-sub-title">0000001</span> </label>
+                </div>
+                <div class="col-md-12">
+                    <label class="label-sub-title">Nombre/Razón Social: <span class="span-sub-title">Rafael Alvare-Ossorio Martin</span> </label>
+                </div>
+                <div class="col-md-12">
+                    <label class="label-sub-title">Dirección: <span class="span-sub-title">C/ Pepito Perez nº 9</span> </label>
+                </div>  
+            </div>
+            <div class="row mt-4 check-notify">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-1 border">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                            </div>                        
+                        </div>
+                        <div class="col-md-11 border">
+                            <span>PLUSVALIA -000004- -Expediente:5555 F.Liquidación: 18/02/1016 Importe: 21976,04 (00004-2016-00-0000193)-</span>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-1 border">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                            </div>                         
+                        </div>
+                        <div class="col-md-11 border">
+                            <span>PLUSVALIA -000004- -Expediente:5555 F.Liquidación: 18/02/1016 Importe: 21976,04 (00004-2016-00-0000193)-</span>                            
+                        </div>                    
+                    </div>
+                </div>                
+            </div>
+        </form>
+        <form class="mt-3" id="register-form">
+            <h5 class="titleh5">Nuevo Domicilio de Notificación</h5>
+            <div class="row">
+                <div class="col-md-2">
+                    <span>Provincias: </span>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="provincia" id="provincia" class="form-control">
+                            <option selected>Seleccionar</option>
+                            <option>Madrid</option>
+                            <option>...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-2">
+                    <span>Municipios: </span>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="ciudad" id="ciudad" class="form-control">
+                            <option selected>Seleccionar</option>
+                            <option>ALCORCON</option>
+                            <option>...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span>Tipos de Vías: </span>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="tipo" id="tipo" class="form-control">
+                            <option selected>Seleccionar</option>
+                            <option>Calle</option>
+                            <option>...</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-2">
+                    <span>Descripción Vías: </span>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" name="descpVia" class="form-control" id="descpVia">
+                    <span class="help-block" id="error"></span>                   
+                </div>
+                <div class="form-group col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary">Limpiar Vías</button>
+                </div>                
+            </div>
+            <div class="row">
+
+                <div class="col-md-1">
+                    <span>Nº: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="numero" class="form-control" id="numero">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-1">
+                    <span>Letra: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="letra" class="form-control" id="letra">
+                    <span class="help-block" id="error"></span>
+                </div>                        
+
+                <div class="col-md-1">
+                    <span>Bloque: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="bloque" class="form-control" id="bloque">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-1">
+                    <span>Portal: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="portal" class="form-control" id="portal">
+                    <span class="help-block" id="error"></span>
+                </div>                                                
+            </div>  
+            <div class="row">
+                <div class="col-md-1">
+                    <span>Escalera: </span>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="escalera" class="form-control" id="escalera">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-1">
+                    <span>Planta: </span>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="planta" class="form-control" id="planta">
+                    <span class="help-block" id="error"></span>
+                </div>                        
+
+                <div class="col-md-1">
+                    <span>Puerta: </span>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text" name="puerta" class="form-control" id="puerta">
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <span>Kilometro: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="km" class="form-control" id="km">
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="col-md-1">
+                    <span>Hectómetro: </span>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="text" name="hct" class="form-control" id="hct">
+                    <span class="help-block" id="error"></span>
+                </div>                        
+
+                <div class="col-md-2">
+                    <span>Codigo Postal: </span>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" name="cp" class="form-control" id="cp">
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div> 
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div>
+                        <i class="warning-icon fas fa-exclamation-triangle fa-2x"></i>
+                        <span class="warning-text">A continuacion debe proceder a confirmar su solicitud y aportar la documentación que fuese necesaria</span>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <div class="caution-section">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <i class="warning-icon fas fa-exclamation-circle fa-4x mt-2"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <p class="caution-text">Verifique los datos de la misma y compruebe que son correctos antes de continuar, ya que no podrá modificarlos más adelante. Sit durante este proceso necesitase modificar estos datos deberá comenzar una solicitud nueva, desde el principio.</p>
+                                <p class="caution-text">Si no finaliza este proceso su solicitud estará incompleta y no será tenida en cuenta</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>                
+            </div>
+            <div class="row mt-4 ">
+                <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Continuar</button>
+                </div>
+            </div>                                                     
+		</form>		
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>	
+	<script src="js/validate-form.js"></script>
+	<script src="js/jquery.validate.js"></script>
+</body>
+</html>

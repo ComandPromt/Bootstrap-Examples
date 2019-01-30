@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
+    <link rel="stylesheet" href="practica_final.css">
+    <script src="../bootstrap/jquery-3.3.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/jquery.validate.js"></script>
+    <script src="../DataTables/datatables.js"></script>
+    <title>Registro de facturas</title>
+
+</head>
+
+<body>
+    <div class="container"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PracticaFinal1.html">Registro de Facturas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal2.html">Cambiar Domicilio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal3.html">Domiciliaci&oacute;n</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinal4.html">Expedientes y valores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PracticaFinalTabla.html">Tabla de facturas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="bl1">Registro Facturas</h2>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                    <h2 class="bl1">Aportar los datos de la factura</h2>
+            </div>
+        </div>
+
+        <form id="form1">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <span class="texto">Texto Explicativo (M&aacute;ximo 120 caracteres)</span class="texto"><br> Texto Explicativo (M&aacute;ximo 120 caracteres)
+                </div>
+            </div>
+
+            <div id="textExp" class="row">
+                <div class="col-md-7">
+                    <textarea class="form-control" rows="1" id="comment" name="comment"></textarea>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <span class="texto">Datos de la factura</span class="texto"><br> La factura se imputar&aacute; al ejercicio contable indicado por la fecha de expedici&oacute;n
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="expedicion">Expedici&oacute;n</label>
+                    <input type="date" class="form-control" id="expedicion" name="expedicion" />
+                </div>
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-3">
+                    <label for="serie">Serie</label>
+                    <input type="text" class="form-control" id="serie" name="serie" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="numero">N&uacute;mero</label>
+                    <input type="text" class="form-control" id="numero" name="numero" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>  
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="tipFac">Tipo de factura</label>
+                    <select id="tipFac" name="tipFac" class="form-control">
+                        <option value=""> Seleccionar tipo de factura</option>
+                        <option value="1">Factura sin IVA</option>
+                        <option value="2">Factura con IVA</option>
+                        <option value="3">Factura rectificativa</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <span class="texto">Detalle de la factura</span class="texto">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expediente">Expediente o referencia de contrataci&oacute;n</label>
+                    <input type="text" class="form-control" id="expediente" name="expediente" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-6">    
+                    <label for="dep">Departamento</label>
+                    <input type="text" class="form-control" id="dep" name="dep" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="perContacto">Persona de Contacto</label>
+                    <input type="text" class="form-control" id="perContacto" name="perContacto" />
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="opeContabe">Operaci&oacute;n Contable</label>
+                    <input type="text" class="form-control" id="opeContable" name="opeContable" />
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="ofiContable">Oficina Contable</label>
+                    <select id="ofiContable" name="ofiContable" class="form-control">
+                        <option value=""> Seleccionar oficina contable</option>
+                        <option value="1">Oficina 1</option>
+                        <option value="2">Oficina 2</option>
+                        <option value="3">Oficina 3</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-6">
+                    <label for="orgGestor">&oacute;rgano Gestor</label>
+                    <select id="orgGestor" name="orgGestor" class="form-control">
+                        <option value=""> Seleccionar &oacute;rgano gestor</option>
+                        <option value="1">&Oacute;rgano Gestor 1</option>
+                        <option value="2">&Oacute;rgano Gestor 2</option>
+                        <option value="3">&Oacute;rgano Gestor 3</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="uniTramitadora">Unidad Tramitadora</label>
+                    <select id="uniTramitadora" name="uniTramitadora" class="form-control">
+                        <option value=""> Seleccionar unidad tramitadora</option>
+                        <option value="1">Unidad Tramitadora 1</option>
+                        <option value="2">Unidad Tramitadora 2</option>
+                        <option value="3">Unidad Tramitadora 3</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="areaGestora">Area Gestora</label>
+                    <select id="areaGestora" name="areaGestora" class="form-control">
+                        <option value=""> Seleccionar area gestora</option>
+                        <option value="1">Area Gestora 1</option>
+                        <option value="2">Area Gestora 2</option>
+                        <option value="3">Area Gestora 3</option>
+                    </select>
+                    <span class="help-block" id="error"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="factDesde">Facturaci&oacute;n desde</label>
+                    <input type="date" class="form-control" id="factDesde" name="factDesde" />
+                </div>
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-5">
+                    <label for="factHasta">Facturaci&oacute;n hasta</label>
+                    <input type="date" class="form-control" id="factHasta" name="factHasta" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 centrado">Detalle</div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col-md-12">Es necesario indicar al menos una l&iacute;nea de detalle de la factura</div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="table-responsive">
+                    <table class="table table-striped table-xs table-secondary" id="tabla1">
+                        <thead>
+                            <tr>
+                                <th>Descripci&oacute;n del bien o servicio</th>
+                                <th>Cantidad</th>
+                                <th>Importe Unitario</th>
+                                <th>Total</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody1">
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><input type="text" class="form-control" id="servicio" name="servicio" /></th>
+                                <th><input type="text" class="form-control" id="cantidad" name="cantidad" /></th>
+                                <th><input type="text" class="form-control" id="importe" name="importe" /></th>
+                                <th></th>
+                                <th><button class="btn btn-secondary" id="agrega_tabla">Añadir</button></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12"><span class="rojo">Total 0,00</span></div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12 centrado">I.V.A</div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="table-responsive">
+                    <table class="table table-striped table-xs table-secondary" id="tabla2">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Base</th>
+                                <th>Cuota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select id="tipo1" name="tipo1" class="form-control">
+                                        <option value=""> Seleccionar Tipo IVA</option>
+                                        <option value="1">Tipo IVA 1</option>
+                                        <option value="2">Tipo IVA 2</option>
+                                        <option value="3">Tipo IVA 3</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="base1" name="tipoIva" value="0,00" /></td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="tipo2" name="tipo2" class="form-control">
+                                        <option value=""> Seleccionar Tipo IVA</option>
+                                        <option value="1">Tipo IVA 1</option>
+                                        <option value="2">Tipo IVA 2</option>
+                                        <option value="3">Tipo IVA 3</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="base2" name="base2" value="0,00" /></td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="tipo3" name="tipo3" class="form-control">
+                                        <option value=""> Seleccionar Tipo IVA</option>
+                                        <option value="1">Tipo IVA 1</option>
+                                        <option value="2">Tipo IVA 2</option>
+                                        <option value="3">Tipo IVA 3</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="base3" name="base3" value="0,00" /></td>
+                                <td>0,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12"><span class="rojo">Total I.V.A 0,00</span></div>
+            </div>
+            <br>
+
+            <div class="form-row">
+                <div class="col-md-12 centrado">Descuentos de la Factura</div>
+            </div>
+            <br>
+
+            <div class="form-row">
+                <div class="table-responsive">
+                    <table class="table table-striped table-xs table-secondary" id="tabla2">
+                        <thead>
+                            <tr>
+                                <th>Tipo Descuento</th>
+                                <th>Tipo</th>
+                                <th>Base</th>
+                                <th>Cuota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I.R.P.F</td>
+                                <td><input type="text" class="form-control" id="tipoDescuento" name="tipoDescuento" value="0,00" /></td>
+                                <td><input type="text" class="form-control" id="baseDescuento" name="baseDescuento" value="0,00" /></td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label for="otroDescuento">Otro</label>
+                                    <input type="text" class="form-control" id="otroDescuento" name="otroDescuento" /></td>
+                                </td>
+                                <td>
+                                    <label for="cuotaDescuento"></label>
+                                    <input type="text" class="form-control" id="cuotaDescuento" name="cuotaDescuento" value="0,00" />
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12">
+                    El importe de "Otros descuentos" minorar&aacute; el importe total de la factura. Si la factura lleva IVA el importe de &eacute;ste descuento no puede imputarse como base imponible de IVA
+                </div>
+            </div>
+            <br />
+            <div class="form-row">
+                <div class="col-md-12"><span class="rojo">Total Descuentos 0,00</span></div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <span class="texto">Pago</span class="texto">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <input type="radio" name="pago" value="Transfer"> Transferencia bancaria:<br />
+                </div>
+
+                <div class="form-group col-md-7">
+
+                    <select id="tipo3" name="tipo3" class="form-control">
+                        <option value=""> Seleccionar</option>
+                        <option value="1">Cuenta 1</option>
+                        <option value="2">Cuenta 2</option>
+                        <option value="3">Cuenta 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <input type="radio" name="pago" value="Otro"> Otra forma de pago:
+                </div>
+
+                <div class="form-group col-md-7">
+                    <input type="text" class="form-control" id="otroPago" name="otroPago" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4"></div>
+
+                <div class="form-group col-md-6">
+                    <button class="btn btn-primary" id="pasoAnterior">&lt;&lt;Paso Anterior</button>
+                    <button type="submit" class="btn btn-primary" id="pasoAnterior">Recalcular</button>
+                    <button class="btn btn-primary" id="pasoAnterior">Paso Siguiente&gt;&gt;</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        $('document').ready(function() {
+
+            $("#form1").validate({           
+                rules: {
+                    comment: {
+                        required: true,
+                        maxlength: 120,
+                    },
+                    serie: {
+                        required: true,
+                        maxlength: 50
+                    },
+                    numero: {
+                        required: true,
+                        maxlength: 3
+                    },
+                    tipFac: {
+                        required: true,
+                        minlength: 1
+                    },
+                    expediente: {
+                        required: true,
+                        maxlength: 20
+                    },
+                    dep: {
+                        required: true,
+                        maxlength: 20
+                    },
+                    perContacto: {
+                        required: true,
+                        maxlength: 50
+                    },
+                    opeContable: {
+                        required: true,
+                        maxlength: 10
+                    },
+                    ofiContable: {
+                        required: true,
+                        minlength: 1
+                    },
+                    orgGestor: {
+                        required: true,
+                        minlength: 1
+                    },
+                    uniTramitadora: {
+                        required: true,
+                        minlength: 1
+                    },
+                    areaGestora: {
+                        required: true,
+                        minlength: 1
+                    }
+                },
+                messages: {
+
+                    comment: {
+                        required: "Por favor, introduzca un texto explicativo.",
+                        maxlength: "M&aacute;ximo 120 caracteres."
+                    },
+                    serie: {
+                        required: "Por favor, indique una serie.",
+                        maxlength: "M&aacute;ximo 50 caracteres."
+                    },
+                    numero: {
+                        required: "Por favor, indique un n&uacute;mero.",
+                        maxlength: "M&aacute;ximo 3 caracteres."
+                    },
+                    tipFac: {
+                        required: "Por favor, indique un tipo de factura.",
+                        minlength: "Es obligatorio elegir una opci&oacute;n."
+                    },
+                    expediente: {
+                        required: "Por favor, indique un expediente.",
+                        maxlength: "M&aacute;ximo 20 caracteres."
+                    },
+                    dep: {
+                        required: "Por favor, indique un departamento.",
+                        maxlength: "M&aacute;ximo 20 caracteres."
+                    },
+                    perContacto: {
+                        required: "Por favor, indique una persona de contacto.",
+                        maxlength: "M&aacute;ximo 50 caracteres."
+                    },
+                    opeContable: {
+                        required: "Por favor, indique una operaci&oacute;n contable.",
+                        maxlength: "M&aacute;ximo 10 caracteres."
+                    },
+                    ofiContable: {
+                        required: "Por favor, seleccione una oficina contable.",
+                        minlength: "Es obligatorio elegir una opci&oacute;n."
+                    },
+                    orgGestor: {
+                        required: "Por favor, seleccione un &oacute;rgano gestor.",
+                        minlength: "Es obligatorio elegir una opci&oacute;n."
+                    },
+                    uniTramitadora: {
+                        required: "Por favor, seleccione una unidad tramitadora.",
+                        minlength: "Es obligatorio elegir una opci&oacute;n."
+                    },
+                    areaGestora: {
+                        required: "Por favor, seleccione un &aacute;rea gestora.",
+                        minlength: "Es obligatorio elegir una opci&oacute;n."
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    $(element).closest('.form-group').find('.help-block').html(error.html());
+                },
+                highlight: function(element) {
+                    $(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-sucess');
+                    $(element).closest('.form-group').find('.help-block').html(' ');
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                    alert('OK');
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

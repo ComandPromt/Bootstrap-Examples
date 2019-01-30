@@ -1,0 +1,45 @@
+.titleh5{
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+.inputSelect {
+    margin-top: 2rem;
+}
+
+.label-sub-title{
+    font-weight: bold;
+    color: #666666;
+}
+
+.span-sub-title{
+    color:#114081;
+    font-weight: 400;
+}
+
+.check-notify{
+    background-color: #ededed;
+}
+
+.warning-text{
+    color:#d35251;
+}
+
+.warning-icon{
+    color:#666666;
+}
+
+.caution-section{
+    background-color: black;
+}
+
+.caution-text{
+    color:white;
+    font-size: 13px;
+}
+
+.help-block{
+    color:#d35251;
+    font-size: 11px;
+}
